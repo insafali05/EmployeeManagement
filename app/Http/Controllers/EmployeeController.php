@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Employee;
 use App\Models\EmployeeDetail;
-use App\Models\EmployeeSalary;
+
 
 class EmployeeController extends Controller
 {
@@ -26,7 +26,7 @@ class EmployeeController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:employee_details,email',
-            'phone' => 'required|string|max:15',
+            'phone' => 'required|string|max:10',
             'address' => 'required|string',
         ]);
 
