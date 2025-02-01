@@ -15,10 +15,6 @@
                         <thead class="table-dark">
                             <tr>
                                 <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Address</th>
-                                <th>Salary</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -26,12 +22,8 @@
                             @foreach($employees as $employee)
                             <tr>
                                 <td>{{ $employee->name }}</td>
-                                <td>{{ $employee->details->email ?? '-' }}</td>
-                                <td>{{ $employee->details->phone ?? '-' }}</td>
-                                <td>{{ $employee->details->address ?? '-' }}</td>
-                                <td>{{ $employee->salary->salary ?? 'Not Assigned' }}</td>
                                 <td>
-                                    <a href="{{ route('employees.show', $employee->id) }}" class="btn btn-info btn-sm">View</a>
+                                    <a href="{{ route('employees.show', $employee->id) }}" class="btn btn-info btn-sm">View Details</a>
                                 </td>
                             </tr>
                             @endforeach

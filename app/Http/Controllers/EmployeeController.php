@@ -11,9 +11,10 @@ class EmployeeController extends Controller
 {
     public function index()
     {
-        $employees = Employee::with('details', 'salary')->get();
+        $employees = Employee::all();
         return view('employees.index', compact('employees'));
     }
+
 
     public function create()
     {
