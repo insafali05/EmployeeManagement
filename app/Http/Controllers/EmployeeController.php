@@ -9,11 +9,11 @@ use App\Models\EmployeeSalary;
 
 class EmployeeController extends Controller
 {
-    // public function index()
-    // {
-    //     $employees = Employee::with('details', 'salary')->get();
-    //     return view('employees.index', compact('employees'));
-    // }
+    public function index()
+    {
+        $employees = Employee::with('details', 'salary')->get();
+        return view('employees.index', compact('employees'));
+    }
 
     public function create()
     {
@@ -42,6 +42,7 @@ class EmployeeController extends Controller
 
     public function show(Employee $employee)
     {
+        $employee->load('details', 'salary');
         return view('employees.show', compact('employee'));
     }
 }
