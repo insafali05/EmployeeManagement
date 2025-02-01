@@ -4,15 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\SalaryController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
 
 
 Route::get('/employees', [EmployeeController::class, 'index'])->name('employees.index');
-Route::get('employees/create', [EmployeeController::class, 'create'])->name('employees.create');
+Route::get('/', [EmployeeController::class, 'create'])->name('employees.create');
 Route::post('/employees', [EmployeeController::class, 'store'])->name('employees.store');
 Route::get('/employees/{employee}', [EmployeeController::class, 'show'])->name('employees.show');
 

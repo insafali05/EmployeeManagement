@@ -34,13 +34,15 @@
                                 <tbody>
                                     @foreach($employees as $employee)
                                     <tr>
-                                        <td>{{ $employee->name }}</td>
+                                        <td class="align-middle">{{ $employee->name }}</td>
                                         <td>
                                             <input type="hidden" name="salaries[{{ $loop->index }}][employee_id]" value="{{ $employee->id }}">
-                                            <input type="number" name="salaries[{{ $loop->index }}][salary]" class="form-control salary-input {{ $employee->salary->salary ? '' : 'border-warning' }}" step="0.01" min="0" placeholder="Enter salary" value="{{ $employee->salary->salary ?? '' }}">
+                                            <input type="number" name="salaries[{{ $loop->index }}][salary]" class="form-control salary-input {{ optional($employee->salary)->salary ? '' : 'border-warning' }}" step="0.01" min="0" placeholder="Enter salary" value="{{ optional($employee->salary)->salary ?? '' }}">
                                         </td>
                                     </tr>
                                     @endforeach
+
+
                                 </tbody>
                             </table>
                         </div>
@@ -52,15 +54,4 @@
     </div>
 </div>
 
-<!-- JavaScript to Clear Inputs After Submission -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        let salaryForm = document.getElementById("salaryForm");
-        salaryForm.addEventListener("submit", function() {
-            document.querySelectorAll('.salary-input').forEach(input => {
-                input.value = "";
-            });
-        });
-    });
-</script>
 @endsection

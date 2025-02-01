@@ -10,7 +10,7 @@ class SalaryController extends Controller
 {
     public function create()
     {
-        $employees = Employee::all();
+        $employees = Employee::with('salary')->get();
         return view('salaries.create', compact('employees'));
     }
 
