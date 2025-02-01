@@ -41,9 +41,14 @@ cd your-repo
 ```bash
 composer install
 npm install
+
 ```
 
-### Step 3: Set Up the Environment
+### Step 3: Key Generate
+
+php artisan key:generate
+
+### Step 4: Set Up the Environment
 
 Copy the `.env.example` file and rename it to `.env`. Then, update database configurations:
 
@@ -53,19 +58,19 @@ DB_USERNAME=your_username
 DB_PASSWORD=your_password
 ```
 
-### Step 4: Run Migrations & Seed Data
+### Step 5: Run Migrations & Seed Data
 
 ```bash
 php artisan migrate --seed
 ```
 
-### Step 5: Start the Laravel Development Server
+### Step 6: Start the Laravel Development Server
 
 ```bash
 php artisan serve
 ```
 
-### Step 6: Running the Salary Increment Command
+### Step 7: Running the Salary Increment Command
 
 ```bash
 php artisan salary:increment
