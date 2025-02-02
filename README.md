@@ -44,11 +44,7 @@ npm install
 
 ```
 
-### Step 3: Key Generate
-
-php artisan key:generate
-
-### Step 4: Set Up the Environment
+### Step 3: Set Up the Environment
 
 Copy the `.env.example` file and rename it to `.env`. Then, update database configurations:
 
@@ -57,6 +53,10 @@ DB_DATABASE=your_database_name
 DB_USERNAME=your_username
 DB_PASSWORD=your_password
 ```
+
+### Step 4: Key Generate
+
+php artisan key:generate
 
 ### Step 5: Run Migrations & Seed Data
 
